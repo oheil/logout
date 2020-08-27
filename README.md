@@ -1,0 +1,2 @@
+# logout
+Thunderbird extension
