@@ -20,9 +20,6 @@ function logout_failure(result) {
 function logout(result) {
 	//console.log(result);
 	if( result != null && result.identities != null ) {
-		if( result.identities[0].hasOwnProperty('composeHtml') ) {
-			delete result.identities[0].composeHtml;
-		}
 		messenger.exp_logout.exp_logout(result.identities);
 	}
 }
