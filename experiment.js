@@ -19,9 +19,9 @@ var exp_logout = class extends ExtensionCommon.ExtensionAPI {
 											if( id != null ) {
 												for (var k = 0; k < identities.length; k++) {
 													var id2logout = identities[k].id;
-													if( id2logout == id.key ) {						
+													if( id2logout == id.key ) {
 														account.incomingServer.forgetPassword();
-														account.incomingServer.forgetSessionPassword();
+														account.incomingServer.forgetSessionPassword(false);
 														account.incomingServer.closeCachedConnections();
 														var smtpService=Components.classes['@mozilla.org/messengercompose/smtp;1'].getService(Components.interfaces.nsISmtpService);
 														if( smtpService != null ) {
