@@ -1,5 +1,6 @@
 
 var { ExtensionCommon } = ChromeUtils.import("resource://gre/modules/ExtensionCommon.jsm");
+var { MailServices } = ChromeUtils.importESModule("resource:///modules/MailServices.sys.mjs");
 
 var exp_logout = class extends ExtensionCommon.ExtensionAPI {
 	getAPI(context) {
@@ -23,13 +24,14 @@ var exp_logout = class extends ExtensionCommon.ExtensionAPI {
 														account.incomingServer.forgetPassword();
 														account.incomingServer.forgetSessionPassword(false);
 														account.incomingServer.closeCachedConnections();
-														var smtpService=Components.classes['@mozilla.org/messengercompose/smtp;1'].getService(Components.interfaces.nsISmtpService);
-														if( smtpService != null ) {
-															var smtpServer=smtpService.getServerByKey(id.smtpServerKey);
+														//var smtpService=Components.classes['@mozilla.org/messengercompose/smtp;1'].getService(Components.interfaces.nsISmtpService);
+														//if( smtpService != null ) {
+															//var smtpServer=smtpService.getServerByKey(id.smtpServerKey);
+															var smtpServer=MailServices.outgoingServer.getServerByKey(id.smtpServerKey);
 															if( smtpServer != null ) {
 																smtpServer.forgetPassword();
 															}
-														}
+														//}
 													}
 												}
 											}

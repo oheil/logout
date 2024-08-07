@@ -1,3 +1,4 @@
+
 async function main() {
 	messenger.menus.create({
 		contexts : ["folder_pane"],

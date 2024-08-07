@@ -25,6 +25,37 @@
                   "optional": true,
                   "type": "string"
                 },
+                "encryptionCapabilities": {
+                  "type": "object",
+                  "properties": {
+                      "OpenPGP": {
+                        "type": "object",
+                        "properties": {
+                        "canEncrypt": {
+                          "optional": true,
+                          "type": "boolean"
+                        },
+                        "canSign": {
+                          "optional": true,
+                          "type": "boolean"
+                        }
+                      }
+                    },
+                    "S/MIME": {
+                      "type": "object",
+                      "properties": {
+                        "canEncrypt": {
+                          "optional": true,
+                          "type": "boolean"
+                        },
+                        "canSign": {
+                          "optional": true,
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  }
+                },
                 "id": {
                   "type": "string"
                 },
