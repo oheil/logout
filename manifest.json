@@ -4,12 +4,12 @@
     "gecko": {
       "id": "logout@heilbit.de",
       "strict_min_version": "115.0",
-      "strict_max_version": "115.*"
+      "strict_max_version": "128.*"
     }
   },
   "name": "Logout",
   "description": "This extension adds Logout to the folders context menu.",
-  "version": "2.8",
+  "version": "2.9",
   "permissions": ["menus","accountsRead"],
   "background": {
     "scripts": ["logout.js"]
