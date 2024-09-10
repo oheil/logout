@@ -16,20 +16,20 @@ function logout_onclick(item) {
 	if(item.hasOwnProperty('selectedAccount')) {
 		account_promise=messenger.accounts.get(item.selectedAccount.id);
 	}
-	if(account_promise != null){
+	if(account_promise != null) {
 		account_promise.then(logout,logout_failure);
 	}
 }
 
-function logout_failure(result) {
+function logout_failure(account) {
 	console.log("logout_failure");
-	console.log(result);
+	console.log(account);
 }
 
-function logout(result) {
-	//console.log(result);
-	if( result != null && result.identities != null ) {
-		messenger.exp_logout.exp_logout(result.identities);
+function logout(account) {
+	//console.log(account);
+	if( account != null && account.identities != null ) {
+		messenger.exp_logout.exp_logout(account.id, account.identities.map(identity => identity.id));
 	}
 }
 

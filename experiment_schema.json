@@ -8,82 +8,14 @@
         "async": true,
         "parameters": [
           {
-            "name": "identities",
+            "name": "accountId",
+            "type": "string"
+          },
+          {
+            "name": "identityIds",
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "accountId": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "composeHtml": {
-                  "optional": true,
-                  "type": "boolean"
-                },
-                "email": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "encryptionCapabilities": {
-                  "type": "object",
-                  "properties": {
-                      "OpenPGP": {
-                        "type": "object",
-                        "properties": {
-                        "canEncrypt": {
-                          "optional": true,
-                          "type": "boolean"
-                        },
-                        "canSign": {
-                          "optional": true,
-                          "type": "boolean"
-                        }
-                      }
-                    },
-                    "S/MIME": {
-                      "type": "object",
-                      "properties": {
-                        "canEncrypt": {
-                          "optional": true,
-                          "type": "boolean"
-                        },
-                        "canSign": {
-                          "optional": true,
-                          "type": "boolean"
-                        }
-                      }
-                    }
-                  }
-                },
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "name": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "organization": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "replyTo": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "signature": {
-                  "optional": true,
-                  "type": "string"
-                },
-                "signatureIsPlainText": {
-                  "optional": true,
-                  "type": "boolean"
-                }
-              }
+              "type": "string"
             }
           }
         ]
