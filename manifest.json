@@ -9,7 +9,7 @@
   },
   "name": "Logout",
   "description": "This extension adds Logout to the folders context menu.",
-  "version": "3.1",
+  "version": "3.2",
   "permissions": ["menus","accountsRead"],
   "background": {
     "scripts": ["logout.js"]
